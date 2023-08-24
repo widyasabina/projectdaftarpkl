@@ -1,6 +1,22 @@
+'use client';
+import React, { useRef } from "react";
 import NewsLatterBox from "./NewsLatterBox";
+import emailjs from "@emailjs/browser";
 
 const Contact = () => {
+  const form = useRef();
+  
+  const sendEmail = (e) => {
+    e.preventDefault();
+
+    emailjs.sendForm('service_h55xidl', 'template_kswwsqm', form.current, 'TKXCdCht69vR_Q5_i')
+      .then((result) => {
+          console.log(result.text);
+      }, (error) => {
+          console.log(error.text);
+      });
+      e.target.reset()
+  };
   return (
     <section id="contact" className="overflow-hidden py-16 md:py-20 lg:py-28">
       <div className="container">
@@ -12,12 +28,12 @@ const Contact = () => {
               "
             >
               <h2 className="mb-3 text-2xl font-bold text-black dark:text-white sm:text-3xl lg:text-2xl xl:text-3xl">
-                Need Help? Open a Ticket
+                Butuh bantuan?
               </h2>
               <p className="mb-12 text-base font-medium text-body-color">
-                Our support team will get back to you ASAP via email.
+              Kirim pertanyaanmu melalui email
               </p>
-              <form>
+              <form ref={form} onSubmit={sendEmail} name="contactForm">
                 <div className="-mx-4 flex flex-wrap">
                   <div className="w-full px-4 md:w-1/2">
                     <div className="mb-8">
@@ -25,7 +41,7 @@ const Contact = () => {
                         htmlFor="name"
                         className="mb-3 block text-sm font-medium text-dark dark:text-white"
                       >
-                        Your Name
+                        Nama
                       </label>
                       <input
                         type="text"
@@ -40,7 +56,7 @@ const Contact = () => {
                         htmlFor="email"
                         className="mb-3 block text-sm font-medium text-dark dark:text-white"
                       >
-                        Your Email
+                        Email
                       </label>
                       <input
                         type="email"
@@ -55,7 +71,7 @@ const Contact = () => {
                         htmlFor="message"
                         className="mb-3 block text-sm font-medium text-dark dark:text-white"
                       >
-                        Your Message
+                        Pesan
                       </label>
                       <textarea
                         name="message"
@@ -67,7 +83,7 @@ const Contact = () => {
                   </div>
                   <div className="w-full px-4">
                     <button className="rounded-md bg-primary py-4 px-9 text-base font-medium text-white transition duration-300 ease-in-out hover:bg-opacity-80 hover:shadow-signUp">
-                      Submit Ticket
+                      Submit 
                     </button>
                   </div>
                 </div>
