@@ -29,7 +29,7 @@ const Footer = () => {
                   />
                 </Link>
                 <p className="mb-9 text-base font-medium leading-relaxed text-body-color">
-                  Dinas Ketahanan Pangan dan Peternakan Jawa Barat
+                  Dinas Ketahanan Pangan dan Peternakan Provinsi Jawa Barat
                 </p>
                 <div className="flex items-center">
                   <a
@@ -207,7 +207,7 @@ const Footer = () => {
         <div className="bg-primary/10 py-8">
           <div className="container">
             <p className="text-center text-base text-body-color dark:text-white">
-              Template by UIdeck and <a href="https://nextjstemplates.com" rel="nofollow noopener">Next.js Templates</a>
+              Copyright @ 2023 by Tim Hore! 
             </p>
           </div>
         </div>
