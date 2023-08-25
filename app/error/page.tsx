@@ -33,7 +33,7 @@ const ErrorPage = () => {
                       cx="227.5"
                       cy="81.5"
                       r="68.5"
-                      fill="#4A6CF7"
+                      fill="#93E9BE"
                     />
                     <mask
                       id="mask0_116:1137"
@@ -231,8 +231,8 @@ const ErrorPage = () => {
                 y2="131.859"
                 gradientUnits="userSpaceOnUse"
               >
-                <stop stopColor="#4A6CF7" stopOpacity="0" />
-                <stop offset="1" stopColor="#4A6CF7" />
+                <stop stopColor="#93E9BE" stopOpacity="0" />
+                <stop offset="1" stopColor="#93E9BE" />
               </linearGradient>
               <linearGradient
                 id="paint1_linear_116:1140"

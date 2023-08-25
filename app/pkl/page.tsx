@@ -3,11 +3,11 @@ import Link from "next/link";
 const pKl = () => {
   return (
     <>
-      <section className="relative z-10 overflow-hidden pt-36 pb-16 md:pb-20 lg:pt-[180px] lg:pb-28">
+      <section className="relative z-10 overflow-hidden pt-36 pb-16 md:pb-20 lg:pt-[180px] lg:pb-28  bg-primary bg-opacity-5 py-10 px-6" >
         <div className="container">
           <div className="-mx-4 flex flex-wrap">
             <div className="w-full px-4">
-              <div className="mx-auto max-w-[500px] rounded-md bg-primary bg-opacity-5 py-10 px-6 dark:bg-dark sm:p-[60px]">
+              <div>
                 <h3 className="mb-3 text-center text-2xl font-bold text-black dark:text-white sm:text-3xl">
                   Daftar PKL
                 </h3>
@@ -58,7 +58,7 @@ const pKl = () => {
                   <span className="hidden h-[1px] w-full max-w-[60px] bg-body-color sm:block"></span>
                 </div> */}
                 <form>
-                  <div className="mb-8">
+                  <div className="mb-8 ">
                     <label
                       htmlFor="name"
                       className="mb-3 block text-sm font-medium text-dark dark:text-white"
@@ -90,51 +90,7 @@ const pKl = () => {
                       <option value="woman">Wanita</option>
                       </select>
                   </div>
-                  <div className="mb-8">
-                    <label
-                      htmlFor="birth_place"
-                      className="mb-3 block text-sm font-medium text-dark dark:text-white"
-                    >
-                      {" "}
-                      Tempat Lahir{" "}
-                    </label>
-                    <input
-                      type="text"
-                      name="birth_place"
-                      placeholder="Masukan tempat lahir anda"
-                      className="w-full rounded-md border border-transparent py-3 px-6 text-base text-body-color placeholder-body-color shadow-one outline-none focus:border-primary focus-visible:shadow-none dark:bg-[#242B51] dark:shadow-signUp"
-                    />
-                  </div>
-                  <div className="mb-8">
-                    <label
-                      htmlFor="birth"
-                      className="mb-3 block text-sm font-medium text-dark dark:text-white"
-                    >
-                      {" "}
-                      Tanggal Lahir{" "}
-                    </label>
-                    <input
-                      type="date"
-                      name="birth"
-                      placeholder="Masukan tanggal lahir anda"
-                      className="w-full rounded-md border border-transparent py-3 px-6 text-base text-body-color placeholder-body-color shadow-one outline-none focus:border-primary focus-visible:shadow-none dark:bg-[#242B51] dark:shadow-signUp"
-                    />
-                  </div>
-                  <div className="mb-8">
-                    <label
-                      htmlFor="address"
-                      className="mb-3 block text-sm font-medium text-dark dark:text-white"
-                    >
-                      {" "}
-                      Alamat{" "}
-                    </label>
-                    <input
-                      type="textarea"
-                      name="address"
-                      placeholder="Masukan alamat anda"
-                      className="w-full rounded-md border border-transparent py-3 px-6 text-base text-body-color placeholder-body-color shadow-one outline-none focus:border-primary focus-visible:shadow-none dark:bg-[#242B51] dark:shadow-signUp"
-                    />
-                  </div>
+                  
                   <div className="mb-8">
                     <label
                       htmlFor="NIM"
@@ -167,6 +123,53 @@ const pKl = () => {
                   </div>
                   <div className="mb-8">
                     <label
+                      htmlFor="address"
+                      className="mb-3 block text-sm font-medium text-dark dark:text-white"
+                    >
+                      {" "}
+                      Alamat Universitas{" "}
+                    </label>
+                    <input
+                      type="textarea"
+                      name="address"
+                      placeholder="Masukan alamat anda"
+                      className="w-full rounded-md border border-transparent py-3 px-6 text-base text-body-color placeholder-body-color shadow-one outline-none focus:border-primary focus-visible:shadow-none dark:bg-[#242B51] dark:shadow-signUp"
+                    />
+                  </div>
+                  <div className="mx-[-12px] flex flex-wrap">
+                  <div className="w-full px-3 mb-8 sm:w-1/2 lg:w-full xl:w-1/2">
+                    <label
+                      htmlFor="department"
+                      className="mb-3 block text-sm font-medium text-dark dark:text-white"
+                    >
+                      {" "}
+                      Jurusan {" "}
+                    </label>
+                    <input
+                      type="text"
+                      name="department"
+                      placeholder="Masukan jurusan anda"
+                      className="w-full rounded-md border border-transparent py-3 px-6 text-base text-body-color placeholder-body-color shadow-one outline-none focus:border-primary focus-visible:shadow-none dark:bg-[#242B51] dark:shadow-signUp"
+                    />
+                  </div>
+                  <div className="mb-8 sm:w-1/2 lg:w-full xl:w-1/2">
+                    <label
+                      htmlFor="semester"
+                      className="mb-3 block text-sm font-medium text-dark dark:text-white"
+                    >
+                      {" "}
+                      Semester/ Tingkat {" "}
+                    </label>
+                    <input
+                      type="text"
+                      name="semester"
+                      placeholder="Masukan semester anda"
+                      className="w-full rounded-md border border-transparent py-3 px-6 text-base text-body-color placeholder-body-color shadow-one outline-none focus:border-primary focus-visible:shadow-none dark:bg-[#242B51] dark:shadow-signUp"
+                    />
+                  </div>
+                  </div>
+                  <div className="mb-8">
+                    <label
                       htmlFor="phone"
                       className="mb-3 block text-sm font-medium text-dark dark:text-white"
                     >
@@ -182,6 +185,32 @@ const pKl = () => {
                   </div>
                   <div className="mb-8">
                     <label
+                      htmlFor="office"
+                      className="mb-3 block text-sm font-medium text-dark dark:text-white"
+                    >
+                      {" "}
+                      Balai{" "}
+                    </label>
+                    <select
+                      name="office"
+                      className="w-full rounded-md border border-transparent py-3 px-6 text-base text-body-color placeholder-body-color shadow-one outline-none focus:border-primary focus-visible:shadow-none dark:bg-[#242B51] dark:shadow-signUp"
+                    >
+                      <option >Pilih Balai</option>
+                      <option value="SH Cikole Lembang">RSH Cikole Lembang</option>
+                      <option value="Balai Kesehatan Hewan dan Kesehatan Masyarakat Veteriner">Balai Kesehatan Hewan dan Kesehatan Masyarakat Veteriner</option>
+                      <option value="Balai Pengembangan Perbibitan Ternak Domba dan Kambing Margawati">Balai Pengembangan Perbibitan Ternak Domba dan Kambing Margawati</option>
+                      <option value="Balai Perbibitan dan Pengembangan Inseminasi Buatan Ternak Sapi Potong Ciamis">Balai Perbibitan dan Pengembangan Inseminasi Buatan Ternak Sapi Potong Ciamis</option>
+                      <option value="Balai Pelatihan Peternakan dan Ketahanan Pangan Cikole">Balai Pelatihan Peternakan dan Ketahanan Pangan Cikole</option>
+                      <option value="Balai Pengembangan Ternak Sapi Perah dan Hijauan Pakan Ternak Cikole">Balai Pengembangan Ternak Sapi Perah dan Hijauan Pakan Ternak Cikole</option>
+                      <option value="Balai Pengujian Mutu dan Keamanan Bahan Pakan Ternak Cikole">Balai Pengujian Mutu dan Keamanan Bahan Pakan Ternak Cikole</option>
+                      <option value="Balai Pengawasan Mutu dan Keamanan Pangan">Balai Pengawasan Mutu dan Keamanan Pangan</option>
+                      <option value="Balai Perbibitan dan Pengembangan Inseminasi Buatan Ternak Sapi Perah Bunikasih">Balai Perbibitan dan Pengembangan Inseminasi Buatan Ternak Sapi Perah Bunikasih</option>
+                      <option value="Balai Perbibitan Ternak Unggas Jatiwangi  ">Balai Perbibitan Ternak Unggas Jatiwangi</option>
+                      <option value="Balai Pengembangan Ternak Sapi Perah">Balai Pengembangan Ternak Sapi Perah</option>
+                      </select>
+                  </div>
+                  <div className="mb-8">
+                    <label
                       htmlFor="email"
                       className="mb-3 block text-sm font-medium text-dark dark:text-white"
                     >
@@ -191,6 +220,38 @@ const pKl = () => {
                     <input
                       type="email"
                       name="email"
+                      placeholder="Enter your Email"
+                      className="w-full rounded-md border border-transparent py-3 px-6 text-base text-body-color placeholder-body-color shadow-one outline-none focus:border-primary focus-visible:shadow-none dark:bg-[#242B51] dark:shadow-signUp"
+                    />
+                  </div>
+                  <div className="mb-8">
+                    <label
+                      htmlFor="uni_mail"
+                      className="mb-3 block text-sm font-medium text-dark dark:text-white"
+                    >
+                      {" "}
+                      Surat Dari Sekolah/ Kampus{" "}
+                    </label>
+                    <input
+                      type="file"
+                      name="uni_mail"
+                      placeholder="Enter your Email"
+                      className="w-full rounded-md border border-transparent py-3 px-6 text-base text-body-color placeholder-body-color shadow-one outline-none focus:border-primary focus-visible:shadow-none dark:bg-[#242B51] dark:shadow-signUp"
+                    />
+                  </div>
+                  
+                  
+                  <div className="mb-8">
+                    <label
+                      htmlFor="proposal"
+                      className="mb-3 block text-sm font-medium text-dark dark:text-white"
+                    >
+                      {" "}
+                      Proposal Dari Sekolah/ Kampus{" "}
+                    </label>
+                    <input
+                      type="file"
+                      name="proposal"
                       placeholder="Enter your Email"
                       className="w-full rounded-md border border-transparent py-3 px-6 text-base text-body-color placeholder-body-color shadow-one outline-none focus:border-primary focus-visible:shadow-none dark:bg-[#242B51] dark:shadow-signUp"
                     />
