@@ -11,8 +11,12 @@ const SigninPage = () => {
                 <h3 className="mb-3 text-center text-2xl font-bold text-black dark:text-white sm:text-3xl">
                   Sign in to your account
                 </h3>
-                <p className="mb-11 text-center text-base font-medium text-body-color">
-                  
+
+                
+                
+                {/* <p className="mb-11 text-center text-base font-medium text-body-color">
+                  Login to your account for a faster checkout.
+>>>>>>> 758f6ff21776bc5b32cdfa38a9071b85dde63ee4
                 </p>
                 <button className="mb-6 flex w-full items-center justify-center rounded-md bg-white p-3 text-base font-medium text-body-color shadow-one hover:text-primary dark:bg-[#242B51] dark:text-body-color dark:shadow-signUp dark:hover:text-white">
                   <span className="mr-3">
@@ -49,12 +53,12 @@ const SigninPage = () => {
                     </svg>
                   </span>
                   Sign in with Google
-                </button>
+                </button> */}
                 <div className="mb-8 flex items-center justify-center">
                   <span className="hidden h-[1px] w-full max-w-[70px] bg-body-color sm:block"></span>
-                  <p className="w-full px-5 text-center text-base font-medium text-body-color">
+                  {/* <p className="w-full px-5 text-center text-base font-medium text-body-color">
                     Or, sign in with your email
-                  </p>
+                  </p> */}
                   <span className="hidden h-[1px] w-full max-w-[70px] bg-body-color sm:block"></span>
                 </div>
                 <form>
@@ -135,12 +139,12 @@ const SigninPage = () => {
                     </button>
                   </div>
                 </form>
-                <p className="text-center text-base font-medium text-body-color">
+                {/* <p className="text-center text-base font-medium text-body-color">
                   Don’t you have an account?
                   <Link href="/signup" className="text-primary hover:underline">
                     Sign up
                   </Link>
-                </p>
+                </p> */}
               </div>
             </div>
           </div>
