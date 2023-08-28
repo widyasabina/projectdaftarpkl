@@ -7,37 +7,37 @@ const menuData: Menu[] = [
     path: "/",
     newTab: false,
   },
-  {
-    id: 2,
-    title: "List",
-    path: "/about",
-    newTab: false,
-  },
+  // {
+  //   id: 2,
+  //   title: "List",
+  //   path: "/about",
+  //   newTab: false,
+  // },
   // {
   //   id: 33,
   //   title: "Blog",
   //   path: "/blog",
   //   newTab: false,
   // },
+  // {
+  //   id: 3,
+  //   title: "Support",
+  //   path: "/contact",
+  //   newTab: false,
+  // },
   {
-    id: 3,
-    title: "Support",
-    path: "/contact",
-    newTab: false,
-  },
-  {
-    id: 4,
+    id: 2,
     title: "Daftar",
     newTab: false,
     submenu: [
       {
-        id: 41,
+        id: 21,
         title: "Daftar PKL",
         path: "/pkl",
         newTab: false,
       },
       {
-        id: 42,
+        id: 22,
         title: "Daftar Penelitian",
         path: "/research",
         newTab: false,
