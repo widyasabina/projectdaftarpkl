@@ -9,7 +9,7 @@ const Contact = () => {
   const sendEmail = (e) => {
     e.preventDefault();
 
-    emailjs.sendForm('service_h55xidl', 'template_kswwsqm', form.current, 'TKXCdCht69vR_Q5_i')
+    emailjs.sendForm('service_89b9cpm', 'template_5wgz2p5', form.current, 'gHIdLBN4YYUaQiYWM')
       .then((result) => {
           console.log(result.text);
       }, (error) => {
@@ -44,6 +44,7 @@ const Contact = () => {
                         Nama
                       </label>
                       <input
+                        name="name"
                         type="text"
                         placeholder="Enter your name"
                         className="w-full rounded-md border border-transparent py-3 px-6 text-base text-body-color placeholder-body-color shadow-one outline-none focus:border-primary focus-visible:shadow-none dark:bg-[#242B51] dark:shadow-signUp"
@@ -59,6 +60,7 @@ const Contact = () => {
                         Email
                       </label>
                       <input
+                        name="email"
                         type="email"
                         placeholder="Enter your email"
                         className="w-full rounded-md border border-transparent py-3 px-6 text-base text-body-color placeholder-body-color shadow-one outline-none focus:border-primary focus-visible:shadow-none dark:bg-[#242B51] dark:shadow-signUp"
