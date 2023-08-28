@@ -4,9 +4,9 @@ Content-Type: application/json
 
 {
     "name": "Widya Sabina",
-    "email": "widya@gmail.com",
-    "password": "wiwid123",
-    "confPassword": "wiwid123",
+    "email": "widyas@gmail.com",
+    "password": "123456",
+    "confPassword": "123456",
     "role": "user"
 }
 
@@ -16,11 +16,11 @@ GET http://localhost:8000/users
 
 ###
 // GET SINGLE USER
-GET http://localhost:8000/users/343fd55d-afdd-4c48-9f70-f31cbd42d125
+GET http://localhost:8000/users/caca7d23-d809-465e-bd72-0463836b9ca7
 
 ###
 // UPDATE A USER
-PATCH  http://localhost:8000/users/343fd55d-afdd-4c48-9f70-f31cbd42d125
+PATCH  http://localhost:8000/users/caca7d23-d809-465e-bd72-0463836b9ca7
 Content-Type: application/json
 
 {
@@ -41,8 +41,8 @@ POST http://localhost:8000/login
 Content-Type: application/json
 
 {
-    "email": "annisa@gmail.com",
-    "password": "icha1919"
+    "email": "annisanur@gmail.com",
+    "password": "p@ssword"
 }
 
 ###
@@ -50,8 +50,8 @@ POST http://localhost:8000/login
 Content-Type: application/json
 
 {
-    "email": "widya@gmail.com",
-    "password": "wiwid123"
+    "email": "widyas@gmail.com",
+    "password": "123456"
 }
 
 ###
