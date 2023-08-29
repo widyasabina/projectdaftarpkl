@@ -1,5 +1,6 @@
 import Link from "next/link";
 import Header from "@/components/Header";
+import Footer from "@/components/Footer";
 
 const research = () => {
   return (
@@ -267,6 +268,7 @@ const research = () => {
           </svg>
         </div>
       </section>
+      <Footer />
     </>
   );
 };

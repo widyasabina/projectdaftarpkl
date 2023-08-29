@@ -1,6 +1,7 @@
 import Breadcrumb from "@/components/Common/Breadcrumb";
 import Contact from "@/components/Contact";
 import Header from "@/components/Header";
+import Footer from "@/components/Footer";
 
 const ContactPage = () => {
   return (
@@ -12,6 +13,7 @@ const ContactPage = () => {
       />
 
       <Contact />
+      <Footer />
     </>
   );
 };
