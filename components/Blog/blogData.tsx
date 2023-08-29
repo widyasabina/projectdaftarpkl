@@ -43,5 +43,47 @@ const blogData: Blog[] = [
     tags: ["design"],
     publishDate: "2025",
   },
+  {
+    id: 4,
+    title: "Tips to quickly improve your coding speed.",
+    paragraph:
+      "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras sit amet dictum neque, laoreet dolor.",
+    image: "/images/blog/blog-details-01.jpg",
+    author: {
+      name: "Lethium Deo",
+      image: "/images/blog/dkpp-post.png",
+      designation: "Graphic Designer",
+    },
+    tags: ["Balai"],
+    publishDate: "2025",
+  },
+  {
+    id: 5,
+    title: "Tips to quickly improve your coding speed.",
+    paragraph:
+      "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras sit amet dictum neque, laoreet dolor.",
+    image: "/",
+    author: {
+      name: "Tersedia",
+      image: "/images/blog/dkpp-post.png",
+      designation: "5",
+    },
+    tags: ["Balai"],
+    publishDate: "2025",
+  },
+  {
+    id: 6,
+    title: "Tips to quickly improve your coding speed.",
+    paragraph:
+      "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras sit amet dictum neque, laoreet dolor.",
+    image: "/images/blog/blog-details-01.jpg",
+    author: {
+      name: "Lethium Deo",
+      image: "/images/blog/dkpp-post.png",
+      designation: "Graphic Designer",
+    },
+    tags: ["Balai"],
+    publishDate: "2025",
+  },
 ];
 export default blogData;

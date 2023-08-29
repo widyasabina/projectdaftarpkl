@@ -33,7 +33,7 @@ app.use(session({
 
 app.use(cors({
     credentials: true,
-    origin: 'http://localhost:3000'
+    origin: 'http://localhost:3001'
 }));
 app.use(express.json());
 app.use(UserRoute);

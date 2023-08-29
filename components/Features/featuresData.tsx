@@ -14,7 +14,7 @@ const featuresData: Feature[] = [
   {
     id: 1,
     icon: (
-      <svg width="40" height="41" viewBox="0 0 40 41" className="fill-current">
+      <svg width="100" height="100" viewBox="0 0 40 41" className="fill-current">
         <path
           opacity="0.5"
           
@@ -26,7 +26,8 @@ const featuresData: Feature[] = [
     title: "RSH Cikole Lembang",
     paragraph:
       "Rumah Sakit Hewan Jawa Barat mempunyai tugas pokok menyelenggarakan sebagian tugas teknis operasional/tugas teknis penunjang di bidang pelayanan rumah sakit hewan, meliputi aspek pelayanan medik veteriner dan penunjang medik veteriner melalui pemberian pelayanan kesehatan hewan secara menyeluruh, terdiri dari pemeriksaan klinis, diagnostic dan laboratoris untuk penyakit hewan dan penyakit hewan menular serta konsultatif kesehatan hewan.",
-  },
+      
+    },
   {
     id: 1,
     icon: (
