@@ -37,12 +37,12 @@ const SingleBlog = ({ blog }: { blog: Blog }) => {
                 <p className="text-xs text-body-color">{author.designation}</p>
               </div>
             </div>
-            <div className="inline-block">
-              <h4 className="mb-1 text-sm font-medium text-dark dark:text-white">
-                Date
-              </h4>
-              <p className="text-xs text-body-color">{publishDate}</p>
-            </div>
+            {/* <div className="inline-block"> */}
+              {/* <h4 className="mb-1 text-sm font-medium text-dark dark:text-white"> */}
+                {/* Date */}
+              {/* </h4> */}
+              {/* <p className="text-xs text-body-color">{publishDate}</p> */}
+            {/* </div> */}
           </div>
         </div>
       </div>
