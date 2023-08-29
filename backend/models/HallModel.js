@@ -4,7 +4,7 @@ import Users from "./UserModel.js";
 
 const {DataTypes} = Sequelize;
 
-const Articles = db.define('article',{
+const Halls = db.define('halls',{
     uuid:{
         type: DataTypes.STRING,
         defaultValue: DataTypes.UUIDV4,
@@ -29,6 +29,14 @@ const Articles = db.define('article',{
             len: [10, 1000]
         }
     },
+    photo:{
+        type: DataTypes.BLOB,
+        allowNull: false,
+        validate:{
+            notEmpty: true,
+            len: [10, 1000]
+        }
+    },
     userId:{
         type: DataTypes.INTEGER,
         allowNull: false,
@@ -40,7 +48,7 @@ const Articles = db.define('article',{
     freezeTableName: true
 });
 
-Users.hasMany(Articles);
-Articles.belongsTo(Users, {foreignKey: 'userId'});
+Users.hasMany(Halls);
+Halls.belongsTo(Users, {foreignKey: 'userId'});
 
-export default Articles;
+export default Halls;

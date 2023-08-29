@@ -5,7 +5,7 @@ import dotenv from "dotenv";
 import db from "./config/Database.js"
 import SequelizeStore from "connect-session-sequelize";
 import UserRoute from "./routes/UserRoute.js";
-import ArticleRoute from "./routes/ArticleRoute.js";
+import HallRoute from "./routes/HallRoute.js"
 import AuthRoute from "./routes/AuthRoute.js";
 dotenv.config();
 
@@ -33,11 +33,11 @@ app.use(session({
 
 app.use(cors({
     credentials: true,
-    origin: 'http://localhost:3000'
+    origin: 'http://localhost:3001'
 }));
 app.use(express.json());
 app.use(UserRoute);
-app.use(ArticleRoute);
+app.use(HallRoute);
 app.use(AuthRoute);
 
 // store.sync();

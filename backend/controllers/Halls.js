@@ -1,21 +1,21 @@
-import Article from "../models/ArticleModel.js";
+import Hall from "../models/HallModel.js"
 import User from "../models/UserModel.js"
 import {Op} from "sequelize";
 
-export const getArticles = async(req, res) => {
+export const getHalls = async(req, res) => {
     try {
         let response;
         if(req.role === "admin"){
-            response = await Article.findAll({
-                attributes:['uuid','title','desc'],
+            response = await Hall.findAll({
+                attributes:['uuid','title','desc','photo'],
                 include:[{
                     model: User,
                     attributes:['name','email']
                 }]
             });
         }else{
-            response = await Article.findAll({
-                attributes:['uuid','title','desc'],
+            response = await Hall.findAll({
+                attributes:['uuid','title','desc','photo'],
                 where:{
                     userId: req.userId
                 },
@@ -31,20 +31,20 @@ export const getArticles = async(req, res) => {
     }
 }
 
-export const getArticleById = async (req, res) => {
+export const getHallById = async (req, res) => {
     try {
-        const article = await Article.findOne({
+        const hall = await Hall.findOne({
             where:{
                 uuid: req.params.id
             }
         });
-        if(!article) return res.status(404).json({msg: "Data tidak ditemukan"});
+        if(!hall) return res.status(404).json({msg: "Data tidak ditemukan"});
         let response;
         if(req.role === "admin"){
-            response = await Article.findOne({
-                attributes:['uuid','title','desc'],
+            response = await Hall.findOne({
+                attributes:['uuid','title','desc','photo'],
                 where:{
-                    id: article.id
+                    id: hall.id
                 },
                 include:[{
                     model: User,
@@ -52,10 +52,10 @@ export const getArticleById = async (req, res) => {
                 }]
             });
         }else{
-            response = await Article.findOne({
-                attributes:['uuid','title','desc'],
+            response = await Hall.findOne({
+                attributes:['uuid','title','desc','photo'],
                 where:{
-                    [Op.and]:[{id: article.id}, {userId: req.userId}]
+                    [Op.and]:[{id: hall.id}, {userId: req.userId}]
                 },
                 include:[{
                     model: User,
@@ -69,73 +69,74 @@ export const getArticleById = async (req, res) => {
     }
 }
 
-export const createArticle = async (req, res) => {
-    const {title, desc} = req.body;
+export const createHall = async (req, res) => {
+    const {title, desc, photo} = req.body;
     try {
-        await Article.create({
+        await Hall.create({
             title: title,
             desc: desc,
+            photo: photo,
             userId: req.userId
         });
-        res.status(201).json({msg: "Article Created Successfuly"});
+        res.status(201).json({msg: "Balai Berhasil dibuat"});
     } catch (error) {
         res.status(500).json({msg: error.message});
     }
 }
 
-export const updateArticle = async (req, res) => {
+export const updateHall = async (req, res) => {
     try {
-        const article = await Article.findOne({
+        const hall = await Hall.findOne({
             where:{
                 uuid: req.params.id
             }
         });
-        if(!article) return res.status(404).json({msg: "Data tidak ditemukan"});
-        const {title, desc} = req.body;
+        if(!hall) return res.status(404).json({msg: "Data tidak ditemukan"});
+        const {title, desc, photo} = req.body;
         if(req.role === "admin"){
-            await Article.update({title, desc},{
+            await Hall.update({title, desc, photo},{
                 where:{
-                    id: article.id
+                    id: hall.id
                 }
             });
         }else{
-            if(req.userId !== article.userId) return res.status(403).json({msg: "Akses terlarang"});
-            await Article.update({title, desc},{
+            if(req.userId !== hall.userId) return res.status(403).json({msg: "Akses terlarang"});
+            await Hall.update({title, desc, photo},{
                 where:{
-                    [Op.and]:[{id: article.id}, {userId: req.userId}]
+                    [Op.and]:[{id: hall.id}, {userId: req.userId}]
                 }
             });
         }
-        res.status(200).json({msg: "Article updated successfuly"});
+        res.status(200).json({msg: "Balai berhasil diperbaharui"});
     } catch (error) {
         res.status(500).json({msg: error.message});
     }
 }
 
-export const deleteArticle = async (req, res) => {
+export const deleteHall = async (req, res) => {
     try {
-        const article = await Article.findOne({
+        const hall = await Hall.findOne({
             where:{
                 uuid: req.params.id
             }
         });
-        if(!article) return res.status(404).json({msg: "Data tidak ditemukan"});
-        const {title, desc} = req.body;
+        if(!hall) return res.status(404).json({msg: "Data tidak ditemukan"});
+        const {title, desc, photo} = req.body;
         if(req.role === "admin"){
-            await Article.destroy({
+            await Hall.destroy({
                 where:{
-                    id: article.id
+                    id: hall.id
                 }
             });
         }else{
-            if(req.userId !== article.userId) return res.status(403).json({msg: "Akses terlarang"});
-            await Article.destroy({
+            if(req.userId !== hall.userId) return res.status(403).json({msg: "Akses terlarang"});
+            await Hall.destroy({
                 where:{
-                    [Op.and]:[{id: article.id}, {userId: req.userId}]
+                    [Op.and]:[{id: hall.id}, {userId: req.userId}]
                 }
             });
         }
-        res.status(200).json({msg: "Article deleted successfuly"});
+        res.status(200).json({msg: "Balai berhasil dihapus"});
     } catch (error) {
         res.status(500).json({msg: error.message});
     }

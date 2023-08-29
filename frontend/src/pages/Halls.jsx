@@ -1,11 +1,11 @@
 import React, { useEffect } from "react";
 import Layout from "./Layout";
-import FormEditProduct from "../components/FormEditProduct";
+import HallList from "../components/HallList";
 import { useDispatch, useSelector } from "react-redux";
 import { useNavigate } from "react-router-dom";
 import { getMe } from "../features/authSlice";
 
-const EditProduct = () => {
+const Halls = () => {
   const dispatch = useDispatch();
   const navigate = useNavigate();
   const { isError } = useSelector((state) => state.auth);
@@ -21,9 +21,9 @@ const EditProduct = () => {
   }, [isError, navigate]);
   return (
     <Layout>
-      <FormEditProduct />
+      <HallList />
     </Layout>
   );
 };
 
-export default EditProduct;
+export default Halls;
