@@ -2,20 +2,22 @@ import React, { useState } from "react";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
 
-const FormAddProduct = () => {
-  const [name, setName] = useState("");
-  const [price, setPrice] = useState("");
+const FormAddHall = () => {
+  const [title, setTitle] = useState("");
+  const [desc, setDesc] = useState("");
+  const [photo, setPhoto] = useState("");
   const [msg, setMsg] = useState("");
   const navigate = useNavigate();
 
-  const saveProduct = async (e) => {
+  const saveHall = async (e) => {
     e.preventDefault();
     try {
-      await axios.post("http://localhost:8000/products", {
-        name: name,
-        price: price,
+      await axios.post("http://localhost:8000/halls", {
+        title: title,
+        desc: desc,
+        photo: photo
       });
-      navigate("/products");
+      navigate("/halls");
     } catch (error) {
       if (error.response) {
         setMsg(error.response.data.msg);
@@ -25,34 +27,45 @@ const FormAddProduct = () => {
 
   return (
     <div>
-      <h1 className="title">Products</h1>
-      <h2 className="subtitle">Add New Product</h2>
+      <h1 className="title">Balai</h1>
+      <h2 className="subtitle">Tambah Balai Baru</h2>
       <div className="card is-shadowless">
         <div className="card-content">
           <div className="content">
-            <form onSubmit={saveProduct}>
+            <form onSubmit={saveHall}>
               <p className="has-text-centered">{msg}</p>
               <div className="field">
-                <label className="label">Name</label>
+                <label className="label">Nama</label>
                 <div className="control">
                   <input
                     type="text"
                     className="input"
-                    value={name}
-                    onChange={(e) => setName(e.target.value)}
-                    placeholder="Product Name"
+                    value={title}
+                    onChange={(e) => setTitle(e.target.value)}
+                    placeholder="Nama Balai"
                   />
                 </div>
               </div>
               <div className="field">
-                <label className="label">Price</label>
+                <label className="label">Deskripsi</label>
                 <div className="control">
                   <input
                     type="text"
                     className="input"
-                    value={price}
-                    onChange={(e) => setPrice(e.target.value)}
-                    placeholder="Price"
+                    value={desc}
+                    onChange={(e) => setDesc(e.target.value)}
+                    placeholder="Deskripsi Balai"
+                  />
+                </div>
+              </div>
+              <div className="field">
+                <label className="label">Logo</label>
+                <div className="control">
+                  <input
+                    type="file"
+                    className="file"
+                    value={photo}
+                    onChange={(e) => setPhoto(e.target.value)}
                   />
                 </div>
               </div>
@@ -72,4 +85,4 @@ const FormAddProduct = () => {
   );
 };
 
-export default FormAddProduct;
+export default FormAddHall;

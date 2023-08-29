@@ -62,26 +62,27 @@ DELETE http://localhost:8000/logout
 
 
 ###
-// GET ALL ARTICLES
-GET http://localhost:8000/articles
+// GET ALL HALLS
+GET http://localhost:8000/halls
 
 ###
-// GET SINGLE ARTICLES
-GET http://localhost:8000/articles/27510ddb-e28a-405a-9b2b-6c44b1557a4e
+// GET SINGLE HALLS
+GET http://localhost:8000/halls
 
 ###
-// POST DATA ARTICLE
-POST http://localhost:8000/articles
+// POST DATA HALLS
+POST http://localhost:8000/halls
 Content-Type: application/json
 
 {
     "title": "Judul 02",
-    "desc": "Ini adalah artikel yang kedua dibuat oleh user"
+    "desc": "Ini adalah artikel yang kedua dibuat oleh user",
+    "photo": ""
 }
 
 ###
-// UPDATE DATA ARTICLE
-PATCH http://localhost:8000/articles/27510ddb-e28a-405a-9b2b-6c44b1557a4e
+// UPDATE DATA HALLS
+PATCH http://localhost:8000/halls/
 Content-Type: application/json
 
 {
@@ -90,5 +91,5 @@ Content-Type: application/json
 }
 
 ###
-//DELETE A ARTICLE
-DELETE http://localhost:8000/articles/27510ddb-e28a-405a-9b2b-6c44b1557a4e
+//DELETE A HALLS
+DELETE http://localhost:8000/halls
