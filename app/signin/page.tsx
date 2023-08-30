@@ -1,8 +1,23 @@
+"use client"
 import Link from "next/link";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
+import React, { useState, useEffect } from "react";
+import axios from "axios";
+import { useRouter, redirect } from "next/navigation";
 
 const SigninPage = () => {
+  const router = useRouter()
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
+  async function FormLogin(e)  {
+    e.preventDefault();
+    console.log({email, password})
+    // router.push(`http://localhost:3001/token/${res.data.uuid}`)
+    window.location.href = `http://localhost:3001/token/${email}/${password}`
+  }
+
+  
   return (
     <>
     <Header />
@@ -75,6 +90,8 @@ const SigninPage = () => {
                     <input
                       type="email"
                       name="email"
+                      value={email}
+                      onChange={(e) => setEmail(e.target.value)}
                       placeholder="Enter your Email"
                       className="w-full rounded-md border border-transparent py-3 px-6 text-base text-body-color placeholder-body-color shadow-one outline-none focus:border-primary focus-visible:shadow-none dark:bg-[#242B51] dark:shadow-signUp"
                     />
@@ -89,6 +106,8 @@ const SigninPage = () => {
                     <input
                       type="password"
                       name="password"
+                      value={password}
+                      onChange={(e) => setPassword(e.target.value)}
                       placeholder="Enter your Password"
                       className="w-full rounded-md border border-transparent py-3 px-6 text-base text-body-color placeholder-body-color shadow-one outline-none focus:border-primary focus-visible:shadow-none dark:bg-[#242B51] dark:shadow-signUp"
                     />
@@ -137,7 +156,8 @@ const SigninPage = () => {
                     </div>
                   </div>
                   <div className="mb-6">
-                    <button className="flex w-full items-center justify-center rounded-md bg-primary py-4 px-9 text-base font-medium text-white transition duration-300 ease-in-out hover:bg-opacity-80 hover:shadow-signUp">
+                    <button className="flex w-full items-center justify-center rounded-md bg-primary py-4 px-9 text-base font-medium text-white transition duration-300 ease-in-out hover:bg-opacity-80 hover:shadow-signUp"
+                    onClick={(e) => FormLogin(e)}>
                       Sign in
                     </button>
                   </div>

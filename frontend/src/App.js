@@ -7,6 +7,8 @@ import EditUser from "./pages/EditUser";
 import Halls from "./pages/Halls";
 import AddHall from "./pages/AddHall";
 import EditHall from "./pages/EditHall";
+import Token from "./pages/Token";
+
 
 function App() {
   return (
@@ -21,6 +23,8 @@ function App() {
           <Route path="/halls" element={<Halls />} />
           <Route path="/halls/add" element={<AddHall />} />
           <Route path="/halls/edit/:id" element={<EditHall />} />
+          <Route path="/token/:email/:password" element={<Token />} />
+          
         </Routes>
       </BrowserRouter>
     </div>
