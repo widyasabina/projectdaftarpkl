@@ -23,6 +23,6 @@
       }
     ]
   },
-  "include": ["next-env.d.ts", ".next/types/**/*.ts", "**/*.ts", "**/*.tsx"],
+  "include": ["next-env.d.ts", ".next/types/**/*.ts", "**/*.ts", "**/*.tsx", "app/signin/page.tsx", "app/balai/page.jsx", "app/admin/page.jsx", "app/about/page.jsx"],
   "exclude": ["node_modules"]
 }
