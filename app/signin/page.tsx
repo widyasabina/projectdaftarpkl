@@ -1,13 +1,19 @@
 "use client"
+
 import React, { useState, useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { useNavigate } from "react-router-dom";
 import { LoginUser, reset } from "../features/authSlice";
+
 import Link from "next/link";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
+import React, { useState, useEffect } from "react";
+import axios from "axios";
+import { useRouter, redirect } from "next/navigation";
 
 const SigninPage = () => {
+
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const dispatch = useDispatch();
@@ -27,6 +33,19 @@ const SigninPage = () => {
     e.preventDefault();
     dispatch(LoginUser({ email, password }));
   };
+
+  const router = useRouter()
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
+  async function FormLogin(e)  {
+    e.preventDefault();
+    console.log({email, password})
+    // router.push(`http://localhost:3001/token/${res.data.uuid}`)
+    window.location.href = `http://localhost:3001/token/${email}/${password}`
+  }
+
+  
+
   return (
     <>
     <Header />
@@ -166,12 +185,19 @@ const SigninPage = () => {
                     </div>
                   </div>
                   <div className="mb-6">
+
                   <button
                     type="submit"
                     className="button is-success is-fullwidth"
                   >
                     {isLoading ? "Loading..." : "Login"}
                   </button>
+
+                    <button className="flex w-full items-center justify-center rounded-md bg-primary py-4 px-9 text-base font-medium text-white transition duration-300 ease-in-out hover:bg-opacity-80 hover:shadow-signUp"
+                    onClick={(e) => FormLogin(e)}>
+                      Sign in
+                    </button>
+
                   </div>
                 </form>
                 {/* <p className="text-center text-base font-medium text-body-color">
