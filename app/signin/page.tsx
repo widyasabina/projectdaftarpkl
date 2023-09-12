@@ -1,4 +1,10 @@
 "use client"
+
+import React, { useState, useEffect } from "react";
+import { useDispatch, useSelector } from "react-redux";
+import { useNavigate } from "react-router-dom";
+import { LoginUser, reset } from "../features/authSlice";
+
 import Link from "next/link";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
@@ -7,6 +13,27 @@ import axios from "axios";
 import { useRouter, redirect } from "next/navigation";
 
 const SigninPage = () => {
+
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
+  const dispatch = useDispatch();
+  const navigate = useNavigate();
+  const { user, isError, isSuccess, isLoading, message } = useSelector(
+    (state) => state.auth
+  );
+
+  useEffect(() => {
+    if (user || isSuccess) {
+      navigate("/dashboard");
+    }
+    dispatch(reset());
+  }, [user, isSuccess, dispatch, navigate]);
+
+  const Auth = (e) => {
+    e.preventDefault();
+    dispatch(LoginUser({ email, password }));
+  };
+
   const router = useRouter()
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
@@ -18,6 +45,7 @@ const SigninPage = () => {
   }
 
   
+
   return (
     <>
     <Header />
@@ -79,7 +107,8 @@ const SigninPage = () => {
                   </p> */}
                   <span className="hidden h-[1px] w-full max-w-[70px] bg-body-color sm:block"></span>
                 </div>
-                <form>
+                <form onSubmit={Auth} className="box">
+                {isError && <p className="has-text-centered">{message}</p>}
                   <div className="mb-8">
                     <label
                       htmlFor="email"
@@ -156,10 +185,19 @@ const SigninPage = () => {
                     </div>
                   </div>
                   <div className="mb-6">
+
+                  <button
+                    type="submit"
+                    className="button is-success is-fullwidth"
+                  >
+                    {isLoading ? "Loading..." : "Login"}
+                  </button>
+
                     <button className="flex w-full items-center justify-center rounded-md bg-primary py-4 px-9 text-base font-medium text-white transition duration-300 ease-in-out hover:bg-opacity-80 hover:shadow-signUp"
                     onClick={(e) => FormLogin(e)}>
                       Sign in
                     </button>
+
                   </div>
                 </form>
                 {/* <p className="text-center text-base font-medium text-body-color">
